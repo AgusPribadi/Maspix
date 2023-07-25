@@ -1,0 +1,11 @@
+.navbar {
+    background-color: #22023f; /* Ganti dengan kode warna biru yang diinginkan */
+}
+
+.container .navbar-brand {
+    color: white;
+}
+
+.container .nav-item .nav-link {
+    color: white;
+}

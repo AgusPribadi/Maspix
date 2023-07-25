@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Halaman Blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'aplikasi_maspix/css/blog.css' %}" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        {% include 'aplikasi_maspix/navbar.html' %}
+
+        <div class="container mt-5">
+            <h1 class="mb-4">Selamat datang di halaman blog!</h1>
+            <div class="row">
+                {% for blog in blogs %}
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}" />
+                        <div class="card-body">
+                            <h5 class="card-title">{{ blog.title }}</h5>
+                            <p class="card-text">{{ blog.content }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

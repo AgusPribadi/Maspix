@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maspix</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'aplikasi_maspix/css/index.css' %}" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        {% include 'aplikasi_maspix/navbar.html' %}
+
+        <div class="jumbotron">
+            <h1>Selamat Datang di Maspix</h1>
+            <p>Tempat Bikinin Kamu Website, Desain, dan Aplikasi Machine Learning</p>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 feature">
+                    <img src="{% static 'aplikasi_maspix/images/website.jpg' %}" alt="Gambar Website" />
+                    <h3>Website</h3>
+                    <p>Bikinin anda website yang bagus dan fleksible</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <img src="{% static 'aplikasi_maspix/images/design.jpg' %}" alt="Gambar Desain" />
+                    <h3>Desain</h3>
+                    <p>Bikinin anda desain poster dan feed instagram</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <img src="{% static 'aplikasi_maspix/images/machine-learning.jpg' %}" alt="Machine Learning" />
+                    <h3>Machine Learning</h3>
+                    <p>Bikinin anda aplikasi machine learning untuk keputusan perusahaan anda</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <p>Hayoo kami siapa</p>
+        </div>
+
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <p>Jangan hubungi dulu, lagi gak mau diganggu</p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
