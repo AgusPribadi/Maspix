@@ -1,0 +1,38 @@
+.footer {
+    background-color: #22023f; /* Warna latar belakang footer (biru) */
+    color: #fff; /* Warna teks pada footer (putih) */
+    padding: 20px 0; /* Ruang padding atas dan bawah pada footer */
+}
+
+.footer a {
+    color: #fff; /* Warna teks ikon (putih) */
+    margin: 0 10px; /* Ruang antara setiap ikon */
+    text-decoration: none; /* Hilangkan garis bawah pada tautan ikon */
+    transition: opacity 0.2s ease-in-out; /* Transisi perubahan opasitas saat dihover */
+}
+
+.footer a:hover {
+    opacity: 0.7; /* Opasitas sedikit berkurang saat dihover */
+}
+
+.footer svg {
+    width: 24px; /* Ukuran ikon (lebar) */
+    height: 24px; /* Ukuran ikon (tinggi) */
+}
+
+.footer p {
+    margin: 5px 0; /* Ruang antara setiap paragraf */
+    font-size: 14px; /* Ukuran teks pada keterangan footer */
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: row; /* Footer akan menampilkan ikon dan keterangan dalam satu baris */
+        justify-content: center; /* Ikon dan keterangan akan di tengah */
+        text-align: center; /* Keterangan akan di tengah pada layar kecil */
+    }
+
+    .footer p {
+        margin: 0; /* Hilangkan margin pada keterangan untuk tata letak yang lebih rapi */
+    }
+}

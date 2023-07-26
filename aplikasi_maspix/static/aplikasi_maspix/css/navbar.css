@@ -1,11 +1,14 @@
 .navbar {
-    background-color: #22023f; /* Ganti dengan kode warna biru yang diinginkan */
+    background-color: #22023f;
 }
 
-.container .navbar-brand {
+.navbar-brand,
+.nav-item {
     color: white;
 }
-
-.container .nav-item .nav-link {
-    color: white;
+/* Media query untuk tata letak navbar pada perangkat seluler */
+@media (max-width: 768px) {
+    .navbar-light .navbar-toggler-icon {
+        filter: invert(1);
+    }
 }
