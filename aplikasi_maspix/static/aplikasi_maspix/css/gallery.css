@@ -1,3 +1,10 @@
 body {
     font-family: "Poppins", sans-serif;
 }
+
+.gallery-item img {
+    width: 100%; /* Set the width of the images to 100% of their container */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+    max-width: 400px; /* Set a maximum width for the images to avoid oversized images */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+}

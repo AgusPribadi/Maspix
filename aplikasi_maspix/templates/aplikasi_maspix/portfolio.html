@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,10 +16,14 @@
             <h1 class="mb-4">Selamat datang di halaman portofolio!</h1>
             <div class="row">
                 {% for portfolio in portfolios %}
-                <div class="col-md-6 portfolio-item">
-                    <h2>{{ portfolio.title }}</h2>
-                    <p>{{ portfolio.description }}</p>
-                    <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" />
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ portfolio.image.url }}" class="card-img-top" alt="{{ portfolio.title }}" />
+                        <div class="card-body">
+                            <h2 class="card-title">{{ portfolio.title }}</h2>
+                            <p class="card-text">{{ portfolio.description }}</p>
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

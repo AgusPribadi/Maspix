@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,13 +13,13 @@
         {% include 'aplikasi_maspix/navbar.html' %}
 
         <div class="container">
-            <h1 class="mb-4">Selamat datang di halaman galeri!</h1>
-            <div class="row">
+            <h1>Selamat datang di halaman galeri!</h1>
+            <div class="row" id="gallery">
                 {% for gallery in galleries %}
-                <div class="col-md-6 gallery-item">
-                    <h2>{{ gallery.title }}</h2>
-                    <p>{{ gallery.description }}</p>
-                    <img src="{{ gallery.image.url }}" alt="{{ gallery.title }}" />
+                <div class="col-md-4">
+                    <a href="{{ gallery.image.url }}" data-lg-size="1920-1080">
+                        <img src="{{ gallery.image.url }}" alt="{{ gallery.title }}" class="img-thumbnail" />
+                    </a>
                 </div>
                 {% endfor %}
             </div>

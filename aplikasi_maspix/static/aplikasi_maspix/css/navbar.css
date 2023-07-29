@@ -2,13 +2,10 @@
     background-color: #22023f;
 }
 
-.navbar-brand,
-.nav-item {
+.container .navbar-brand {
     color: white;
 }
-/* Media query untuk tata letak navbar pada perangkat seluler */
-@media (max-width: 768px) {
-    .navbar-light .navbar-toggler-icon {
-        filter: invert(1);
-    }
+
+.container .nav-item .nav-link {
+    color: white;
 }
