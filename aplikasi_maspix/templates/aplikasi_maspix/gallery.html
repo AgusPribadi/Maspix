@@ -6,27 +6,59 @@
         <title>Halaman Gallery</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css" />
         <link rel="stylesheet" href="{% static 'aplikasi_maspix/css/gallery.css' %}" />
+        <style>
+            /* Media query untuk layar kecil */
+            @media (max-width: 767px) {
+                .gallery-images a {
+                    width: 100%;
+                }
+            }
+
+            .small-image {
+                max-width: 200px;
+                height: auto;
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar -->
         {% include 'aplikasi_maspix/navbar.html' %}
 
         <div class="container">
-            <h1>Selamat datang di halaman galeri!</h1>
-            <div class="row" id="gallery">
-                {% for gallery in galleries %}
-                <div class="col-md-4">
-                    <a href="{{ gallery.image.url }}" data-lg-size="1920-1080">
-                        <img src="{{ gallery.image.url }}" alt="{{ gallery.title }}" class="img-thumbnail" />
-                    </a>
+            <div class="col-md-8">
+                {% if galleries.all %}
+                <div class="image-galleries">
+                    <br />
+                    <h2>Galeri Gambar</h2>
+                    <div class="gallery-images">
+                        {% for gallery in galleries %}
+                        <a href="{{ gallery.image.url }}" data-lg-size="1920-1080">
+                            <img src="{{ gallery.image.url }}" alt="{{ coffee_shop.nama }}" class="small-image" />
+                        </a>
+                        {% endfor %}
+                    </div>
                 </div>
-                {% endfor %}
+                {% endif %}
             </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lg-thumbnail@1.1.0/dist/lg-thumbnail.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".gallery-images").lightGallery({
+                    mode: "lg-fade",
+                    speed: 600,
+                    download: false,
+                    thumbnail: true,
+                });
+            });
+        </script>
     </body>
 </html>

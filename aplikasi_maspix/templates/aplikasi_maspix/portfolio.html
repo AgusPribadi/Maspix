@@ -12,22 +12,68 @@
         <!-- Navbar -->
         {% include 'aplikasi_maspix/navbar.html' %}
 
-        <div class="container">
-            <h1 class="mb-4">Selamat datang di halaman portofolio!</h1>
-            <div class="row">
-                {% for portfolio in portfolios %}
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <img src="{{ portfolio.image.url }}" class="card-img-top" alt="{{ portfolio.title }}" />
-                        <div class="card-body">
-                            <h2 class="card-title">{{ portfolio.title }}</h2>
-                            <p class="card-text">{{ portfolio.description }}</p>
+        <!-- Website Section -->
+        <section id="website">
+            <div class="container">
+                <h1 class="mb-4">Website</h1>
+                <!-- Add your website content here -->
+                <div class="row">
+                    {% for portfolio in portfolios %} {% if portfolio.category == 'Website' %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img src="{{ portfolio.image.url }}" class="card-img-top" alt="{{ portfolio.title }}" />
+                            <div class="card-body">
+                                <h2 class="card-title">{{ portfolio.title }}</h2>
+                                <p class="card-text">{{ portfolio.description }}</p>
+                            </div>
                         </div>
                     </div>
+                    {% endif %} {% endfor %}
                 </div>
-                {% endfor %}
             </div>
-        </div>
+        </section>
+
+        <!-- Desain Section -->
+        <section id="desain">
+            <div class="container">
+                <h1 class="mb-4">Desain</h1>
+                <!-- Add your design content here -->
+                <div class="row">
+                    {% for portfolio in portfolios %} {% if portfolio.category == 'Desain' %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img src="{{ portfolio.image.url }}" class="card-img-top" alt="{{ portfolio.title }}" />
+                            <div class="card-body">
+                                <h2 class="card-title">{{ portfolio.title }}</h2>
+                                <p class="card-text">{{ portfolio.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %} {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Machine Learning Section -->
+        <section id="machine-learning">
+            <div class="container">
+                <h1 class="mb-4">Machine Learning</h1>
+                <!-- Add your machine learning content here -->
+                <div class="row">
+                    {% for portfolio in portfolios %} {% if portfolio.category == 'Machine Learning' %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img src="{{ portfolio.image.url }}" class="card-img-top" alt="{{ portfolio.title }}" />
+                            <div class="card-body">
+                                <h2 class="card-title">{{ portfolio.title }}</h2>
+                                <p class="card-text">{{ portfolio.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %} {% endfor %}
+                </div>
+            </div>
+        </section>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
